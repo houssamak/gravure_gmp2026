@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.gmp.gmp.controller.DashboardController"
+            prefWidth="1220" prefHeight="960"
+            style="-fx-background-color: #F4F6FA;">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  LEFT SIDEBAR                                          -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <left>
+        <VBox prefWidth="230" prefHeight="960"
+              style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 2, 0);">
+
+            <!-- Logo -->
+            <HBox alignment="CENTER_LEFT" spacing="10"
+                  style="-fx-padding: 24 20 24 20; -fx-background-color: #FFFFFF;">
+                <Rectangle width="36" height="36" arcWidth="8" arcHeight="8"
+                           style="-fx-fill: #1A3A6B;"/>
+                <VBox spacing="0">
+                    <Label text="MarbleMaster"
+                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 15px; -fx-text-fill: #1A3A6B; -fx-font-weight: bold;"/>
+                    <Label text="ENGRAVING SYSTEMS"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 9px; -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                </VBox>
+            </HBox>
+
+            <Separator style="-fx-background-color: #EEF1F7;"/>
+
+            <!-- Navigation Menu -->
+            <VBox spacing="4" style="-fx-padding: 16 12 16 12;" VBox.vgrow="ALWAYS">
+
+                <!-- Dashboard (active) -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-color: #EBF0FA; -fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #1A3A6B; -fx-shape: 'M 0 0 H 7 V 7 H 0 Z M 9 0 H 16 V 7 H 9 Z M 0 9 H 7 V 16 H 0 Z M 9 9 H 16 V 16 H 9 Z';"/>
+                    <Label text="Dashboard" fx:id="navDashboard"
+                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px; -fx-text-fill: #1A3A6B; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <!-- Clients -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Clients" fx:id="navClients"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <!-- Orders -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Orders" fx:id="navOrders"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <!-- Engraving -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Engraving" fx:id="navEngraving"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <!-- Billing -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Billing" fx:id="navBilling"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <!-- Fleet -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Fleet" fx:id="navFleet"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <!-- Settings -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Settings"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+
+                <!-- Support -->
+                <HBox alignment="CENTER_LEFT" spacing="12" prefHeight="44"
+                      style="-fx-background-radius: 8; -fx-padding: 0 12 0 12; -fx-cursor: hand;">
+                    <Region prefWidth="18" prefHeight="18"
+                            style="-fx-background-color: #6B7A99;"/>
+                    <Label text="Support"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #6B7A99;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  TOP HEADER                                            -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="64" spacing="0"
+              style="-fx-background-color: #FFFFFF; -fx-padding: 0 24 0 24;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 2);">
+
+            <!-- Search Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="8" prefWidth="320" prefHeight="38"
+                  style="-fx-background-color: #F4F6FA; -fx-background-radius: 8; -fx-padding: 0 12 0 12;">
+                <Label text="🔍" style="-fx-font-size: 14px; -fx-text-fill: #A0ABBE;"/>
+                <TextField promptText="Search orders..."
+                           style="-fx-background-color: transparent; -fx-border-color: transparent;
+                                  -fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #3C4A6B;
+                                  -fx-prompt-text-fill: #A0ABBE;"
+                           prefWidth="270"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Notification Bell -->
+            <Button text="🔔"
+                    style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-cursor: hand; -fx-padding: 0 16 0 16;"/>
+
+            <!-- Help -->
+            <Button text="❓"
+                    style="-fx-background-color: transparent; -fx-font-size: 16px; -fx-cursor: hand; -fx-padding: 0 16 0 16;"/>
+
+            <Separator orientation="VERTICAL" prefHeight="32"
+                       style="-fx-background-color: #EEF1F7; -fx-padding: 0 8 0 8;"/>
+
+            <!-- User Profile -->
+            <HBox alignment="CENTER" spacing="10" style="-fx-padding: 0 0 0 16;">
+                <VBox alignment="CENTER_RIGHT" spacing="1">
+                    <Label text="Admin Pro"
+                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                    <Label text="SUPER USER"
+                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 9px;
+                                  -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                </VBox>
+                <Circle radius="20"
+                        style="-fx-fill: #1A3A6B;"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  MAIN CONTENT                                          -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color: #F4F6FA; -fx-background: #F4F6FA; -fx-border-color: transparent;">
+            <VBox spacing="24" style="-fx-padding: 32 32 32 32;">
+
+                <!-- Page Header Row -->
+                <HBox alignment="CENTER_LEFT">
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="Bonjour, Admin"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 26px;
+                                      -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                        <Label text="Voici l'aperçu de votre activité pour aujourd'hui."
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 13px; -fx-text-fill: #8A9BB5;"/>
+                    </VBox>
+
+                    <!-- Action Buttons -->
+                    <HBox spacing="12" alignment="CENTER_RIGHT">
+                        <Button text="+ Ajouter Client" fx:id="btnAddClient"
+                                prefHeight="40"
+                                style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8EA;
+                                       -fx-border-radius: 8; -fx-background-radius: 8;
+                                       -fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                       -fx-text-fill: #1A2A4A; -fx-cursor: hand; -fx-padding: 0 20 0 20;"/>
+                        <Button text="+ Nouveau Commande" fx:id="btnNewOrder"
+                                prefHeight="40"
+                                style="-fx-background-color: #1A3A6B; -fx-background-radius: 8;
+                                       -fx-border-radius: 8; -fx-font-family: 'Segoe UI Semibold';
+                                       -fx-font-size: 13px; -fx-text-fill: #FFFFFF;
+                                       -fx-cursor: hand; -fx-padding: 0 20 0 20;"/>
+                    </HBox>
+                </HBox>
+
+                <!-- ─── KPI CARDS ROW ─── -->
+                <HBox spacing="16">
+
+                    <!-- Card 1: Total Revenue -->
+                    <VBox spacing="8" HBox.hgrow="ALWAYS"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                 -fx-padding: 20 20 20 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+                        <HBox alignment="CENTER_LEFT" spacing="0">
+                            <Label text="💳" style="-fx-font-size: 20px;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label text="+12.5%"
+                                   style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 12px;
+                                          -fx-text-fill: #2ECC71; -fx-font-weight: bold;"/>
+                        </HBox>
+                        <Label text="TOTAL REVENUE"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 10px;
+                                      -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                        <Label text="€124.5k" fx:id="lblTotalRevenue"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 28px;
+                                      -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                    </VBox>
+
+                    <!-- Card 2: Active Orders -->
+                    <VBox spacing="8" HBox.hgrow="ALWAYS"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                 -fx-padding: 20 20 20 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+                        <HBox alignment="CENTER_LEFT" spacing="0">
+                            <Label text="🛒" style="-fx-font-size: 20px;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label text="Current"
+                                   style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                        </HBox>
+                        <Label text="ACTIVE ORDERS"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 10px;
+                                      -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                        <Label text="42" fx:id="lblActiveOrders"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 28px;
+                                      -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                    </VBox>
+
+                    <!-- Card 3: Pending Engraving -->
+                    <VBox spacing="8" HBox.hgrow="ALWAYS"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                 -fx-padding: 20 20 20 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+                        <HBox alignment="CENTER_LEFT" spacing="0">
+                            <Label text="✏️" style="-fx-font-size: 20px;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label text="Action Required"
+                                   style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 11px;
+                                          -fx-text-fill: #E74C3C; -fx-background-color: #FDECEA;
+                                          -fx-background-radius: 4; -fx-padding: 2 8 2 8;"/>
+                        </HBox>
+                        <Label text="PENDING ENGRAVING"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 10px;
+                                      -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                        <Label text="18" fx:id="lblPendingEngraving"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 28px;
+                                      -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                    </VBox>
+
+                    <!-- Card 4: Vehicles in Service -->
+                    <VBox spacing="8" HBox.hgrow="ALWAYS"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                 -fx-padding: 20 20 20 20;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+                        <HBox alignment="CENTER_LEFT" spacing="0">
+                            <Label text="🚛" style="-fx-font-size: 20px;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label text="Deployed"
+                                   style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                        </HBox>
+                        <Label text="VEHICLES IN SERVICE"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 10px;
+                                      -fx-text-fill: #8A9BB5; -fx-letter-spacing: 1px;"/>
+                        <Label text="5/6" fx:id="lblVehicles"
+                               style="-fx-font-family: 'Segoe UI'; -fx-font-size: 28px;
+                                      -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- ─── BOTTOM SECTION: Chart + Activity ─── -->
+                <HBox spacing="16" alignment="TOP_LEFT">
+
+                    <!-- Monthly Revenue Chart -->
+                    <VBox spacing="16" HBox.hgrow="ALWAYS"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                 -fx-padding: 24 24 24 24;
+                                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+
+                        <!-- Chart Header -->
+                        <HBox alignment="CENTER_LEFT">
+                            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                                <Label text="Monthly Revenue"
+                                       style="-fx-font-family: 'Segoe UI'; -fx-font-size: 16px;
+                                              -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"/>
+                                <Label text="Performance analysis for the current fiscal year"
+                                       style="-fx-font-family: 'Segoe UI'; -fx-font-size: 12px; -fx-text-fill: #8A9BB5;"/>
+                            </VBox>
+
+                            <!-- Toggle Buttons -->
+                            <HBox spacing="0"
+                                  style="-fx-background-color: #F4F6FA; -fx-background-radius: 8; -fx-padding: 4;">
+                                <Button text="Weekly" fx:id="btnWeekly"
+                                        style="-fx-background-color: transparent; -fx-background-radius: 6;
+                                               -fx-font-family: 'Segoe UI'; -fx-font-size: 12px;
+                                               -fx-text-fill: #6B7A99; -fx-cursor: hand; -fx-padding: 4 14 4 14;"/>
+                                <Button text="Monthly" fx:id="btnMonthly"
+                                        style="-fx-background-color: #1A3A6B; -fx-background-radius: 6;
+                                               -fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 12px;
+                                               -fx-text-fill: #FFFFFF; -fx-cursor: hand; -fx-padding: 4 14 4 14;"/>
+                            </HBox>
+                        </HBox>
+
+                        <!-- Bar Chart -->
+                        <BarChart fx:id="revenueChart"
+                                  prefHeight="280"
+                                  style="-fx-background-color: transparent; -fx-border-color: transparent;"
+                                  animated="true"
+                                  legendVisible="false">
+                            <xAxis>
+                                <CategoryAxis fx:id="xAxis"
+                                              style="-fx-tick-label-fill: #8A9BB5; -fx-font-size: 11px; -fx-tick-mark-visible: false; -fx-axis-line-visible: false;"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="yAxis"
+                                            style="-fx-tick-label-fill: #8A9BB5; -fx-font-size: 11px; -fx-tick-mark-visible: false; -fx-axis-line-visible: false; -fx-minor-tick-visible: false;"/>
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+
+                    <!-- Right Panel: Recent Activity + Laser Status -->
+                    <VBox spacing="16" prefWidth="300">
+
+                        <!-- Recent Activity Card -->
+                        <VBox spacing="0"
+                              style="-fx-background-color: #FFFFFF; -fx-background-radius: 12;
+                                     -fx-padding: 20 20 20 20;
+                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);">
+
+                            <HBox alignment="CENTER_LEFT" style="-fx-padding: 0 0 16 0;">
+                                <Label text="Recent Activity"
+                                       style="-fx-font-family: 'Segoe UI'; -fx-font-size: 15px;
+                                              -fx-font-weight: bold; -fx-text-fill: #1A2A4A;"
+                                       HBox.hgrow="ALWAYS"/>
+                                <Hyperlink text="View All"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 12px;
+                                                  -fx-text-fill: #1A3A6B; -fx-border-color: transparent;"/>
+                            </HBox>
+
+                            <!-- Activity Item 1 -->
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10 0 10 0;">
+                                <Circle radius="5" style="-fx-fill: #1A3A6B;"/>
+                                <VBox spacing="2">
+                                    <Label text="Order #892 completed"
+                                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                                    <Label text="L'Atelier des Anges • 2h ago"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                                </VBox>
+                            </HBox>
+
+                            <Separator style="-fx-background-color: #F4F6FA;"/>
+
+                            <!-- Activity Item 2 -->
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10 0 10 0;">
+                                <Circle radius="5" style="-fx-fill: #2ECC71;"/>
+                                <VBox spacing="2">
+                                    <Label text="New payment received"
+                                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                                    <Label text="Client A • €4,250.00 • 5h ago"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                                </VBox>
+                            </HBox>
+
+                            <Separator style="-fx-background-color: #F4F6FA;"/>
+
+                            <!-- Activity Item 3 -->
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10 0 10 0;">
+                                <Circle radius="5" style="-fx-fill: #95A5A6;"/>
+                                <VBox spacing="2">
+                                    <Label text="Engraving Started"
+                                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                                    <Label text="Order #901 • Machine #2 • 1d ago"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                                </VBox>
+                            </HBox>
+
+                            <Separator style="-fx-background-color: #F4F6FA;"/>
+
+                            <!-- Activity Item 4 -->
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10 0 10 0;">
+                                <Circle radius="5" style="-fx-fill: #D5D8DC;"/>
+                                <VBox spacing="2">
+                                    <Label text="Fleet Maintenance"
+                                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                                    <Label text="Vehicle #6 • Scheduled • 1d ago"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                                </VBox>
+                            </HBox>
+
+                            <Separator style="-fx-background-color: #F4F6FA;"/>
+
+                            <!-- Activity Item 5 -->
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 10 0 10 0;">
+                                <Circle radius="5" style="-fx-fill: #1A3A6B;"/>
+                                <VBox spacing="2">
+                                    <Label text="New Order Submitted"
+                                           style="-fx-font-family: 'Segoe UI Semibold'; -fx-font-size: 13px;
+                                                  -fx-text-fill: #1A2A4A; -fx-font-weight: bold;"/>
+                                    <Label text="Architecture Paris Sud • 2d ago"
+                                           style="-fx-font-family: 'Segoe UI'; -fx-font-size: 11px; -fx-text-fill: #8A9BB5;"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <!-- Laser Module Status Card -->
+                        <StackPane prefHeight="130" style="-fx-background-radius: 12;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 3);">
+                            <!-- Dark overlay background -->
+                            <Rectangle arcWidth="12" arcHeight="12"
+                                       style="-fx-fill: #0D1F3C;" width="300" height="130"/>
+                            <!-- Content -->
+                            <VBox alignment="BOTTOM_LEFT" spacing="4" style="-fx-padding: 16;">
+                                <Label text="ACTIVE SYSTEM"
+                                       style="-fx-font-family: 'Segoe UI'; -fx-font-size: 10px;
+                                              -fx-text-fill: #5DADE2; -fx-letter-spacing: 1.5px;"/>
+                                <Label text="Laser Module #4: Optimal"
+                                       style="-fx-font-family: 'Segoe UI'; -fx-font-size: 16px;
+                                              -fx-font-weight: bold; -fx-text-fill: #FFFFFF;"/>
+                            </VBox>
+                        </StackPane>
+
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
